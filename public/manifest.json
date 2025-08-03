@@ -9,9 +9,9 @@
   },
   "developer": {
     "name": "Sunne kommun",
-    "websiteUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net",
-    "privacyUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net",
-    "termsOfUseUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net"
+    "websiteUrl": "https://purple-field-05bdcf003.1.azurestaticapps.net",
+    "privacyUrl": "https://purple-field-05bdcf003.1.azurestaticapps.net",
+    "termsOfUseUrl": "https://purple-field-05bdcf003.1.azurestaticapps.net"
   },
   "description": {
     "short": "Export Teams conversations to service desk tickets",
@@ -24,7 +24,7 @@
   "accentColor": "#0078d4",
   "configurableTabs": [
     {
-      "configurationUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net",
+      "configurationUrl": "https://purple-field-05bdcf003.1.azurestaticapps.net",
       "canUpdateConfiguration": true,
       "scopes": [
         "team",
@@ -36,7 +36,7 @@
     {
       "entityId": "exportTab",
       "name": "Export Conversations",
-      "contentUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net/",
+      "contentUrl": "https://purple-field-05bdcf003.1.azurestaticapps.net/",
       "scopes": [
         "personal"
       ]
@@ -75,7 +75,7 @@
             "title": "Create Service Desk Case",
             "width": "large",
             "height": "large",
-            "url": "https://proud-hill-02d98db03.2.azurestaticapps.net/#/create-case"
+            "url": "https://purple-field-05bdcf003.1.azurestaticapps.net/#/create-case"
           }
         }
       ],
@@ -84,7 +84,7 @@
           "type": "link",
           "value": {
             "domains": [
-              "proud-hill-02d98db03.2.azurestaticapps.net"
+              "purple-field-05bdcf003.1.azurestaticapps.net"
             ],
             "supportsAnonymizedPayloads": false
           }
@@ -93,7 +93,7 @@
     }
   ],
   "validDomains": [
-    "proud-hill-02d98db03.2.azurestaticapps.net",
+    "purple-field-05bdcf003.1.azurestaticapps.net",
     "token.botframework.com"
   ],
   "webApplicationInfo": {
