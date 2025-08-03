@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "version": "1.1.6",
+  "manifestVersion": "1.16",
+  "id": "5108ef50-63c5-4a69-8d1c-f596d806b294",
+  "name": {
+    "short": "Ticket Export (test)",
+    "full": "Conversation to Service Desk Export"
+  },
+  "developer": {
+    "name": "Sunne kommun",
+    "websiteUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net",
+    "privacyUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net",
+    "termsOfUseUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net"
+  },
+  "description": {
+    "short": "Export Teams conversations to service desk tickets",
+    "full": "Export selected Teams conversation messages to create service desk tickets with automatic participant detection"
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#0078d4",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team",
+        "groupChat"
+      ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "exportTab",
+      "name": "Export Conversations",
+      "contentUrl": "https://proud-hill-02d98db03.2.azurestaticapps.net/",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "5108ef50-63c5-4a69-8d1c-f596d806b294",
+      "scopes": [
+        "personal",
+        "team",
+        "groupChat"
+      ],
+      "isNotificationOnly": false,
+      "supportsCalling": false,
+      "supportsVideo": false,
+      "supportsFiles": false
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "5108ef50-63c5-4a69-8d1c-f596d806b294",
+      "commands": [
+        {
+          "id": "createCase",
+          "type": "action",
+          "title": "Create case",
+          "description": "Create a service desk case from this conversation",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": [
+            "message",
+            "compose"
+          ],
+          "taskInfo": {
+            "title": "Create Service Desk Case",
+            "width": "large",
+            "height": "large",
+            "url": "https://proud-hill-02d98db03.2.azurestaticapps.net/#/create-case"
+          }
+        }
+      ],
+      "messageHandlers": [
+        {
+          "type": "link",
+          "value": {
+            "domains": [
+              "proud-hill-02d98db03.2.azurestaticapps.net"
+            ],
+            "supportsAnonymizedPayloads": false
+          }
+        }
+      ]
+    }
+  ],
+  "validDomains": [
+    "proud-hill-02d98db03.2.azurestaticapps.net",
+    "token.botframework.com"
+  ],
+  "webApplicationInfo": {
+    "id": "5108ef50-63c5-4a69-8d1c-f596d806b294"
+  }
+}

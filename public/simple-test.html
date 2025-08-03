@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Teams SDK Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://res.cdn.office.net/teams-js/2.18.0/js/MicrosoftTeams.min.js"></script>
+  <style>
+    body { background: #111; color: #0f0; font-family: sans-serif; padding: 2rem; }
+    .log { margin: 0.5rem 0; }
+  </style>
+</head>
+<body>
+  <h1>✅ Teams Task Module Loaded</h1>
+  <div id="log"></div>
+
+  <script>
+    const log = (msg) => {
+      const el = document.createElement("div");
+      el.className = "log";
+      el.textContent = msg;
+      document.getElementById("log").appendChild(el);
+    };
+
+    log("🟡 Page loaded, waiting for SDK...");
+
+    if (typeof microsoftTeams !== "undefined") {
+      log("🟢 Teams SDK found");
+
+      microsoftTeams.app.initialize().then(() => {
+        log("✅ SDK initialized");
+
+        microsoftTeams.app.getContext().then((context) => {
+          log("📦 Context:");
+          log(JSON.stringify(context, null, 2));
+        }).catch((err) => {
+          log("❌ getContext failed: " + err.message);
+        });
+
+      }).catch((err) => {
+        log("❌ initialize failed: " + err.message);
+      });
+
+    } else {
+      log("❌ SDK not loaded!");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Teams Integration Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f3f2f1;
+            color: #323130;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .success { background: #dff6dd; color: #107c10; }
+        .error { background: #fed9cc; color: #d13438; }
+        .info { background: #deecf9; color: #0078d4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teams Integration Test</h1>
+        <div id="status">
+            <div class="status info">Loading...</div>
+        </div>
+        <div id="details"></div>
+    </div>
+    
+    <script>
+        const statusDiv = document.getElementById('status');
+        const detailsDiv = document.getElementById('details');
+        
+        function addStatus(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.textContent = message;
+            statusDiv.appendChild(div);
+        }
+        
+        function addDetail(label, value) {
+            const p = document.createElement('p');
+            p.innerHTML = `<strong>${label}:</strong> ${value}`;
+            detailsDiv.appendChild(p);
+        }
+        
+        // Clear loading message
+        statusDiv.innerHTML = '';
+        
+        try {
+            addStatus('✓ Page loaded successfully', 'success');
+            addDetail('URL', window.location.href);
+            addDetail('User Agent', navigator.userAgent);
+            addDetail('Viewport', `${window.innerWidth}x${window.innerHeight}`);
+            addDetail('Is in iframe', window.parent !== window ? 'Yes' : 'No');
+            
+            // Check if we're in Teams context
+            const isTeams = window.location.search.includes('teams=true') || 
+                           navigator.userAgent.includes('Teams') ||
+                           window.parent !== window;
+            
+            if (isTeams) {
+                addStatus('✓ Running in Teams context', 'success');
+            } else {
+                addStatus('⚠ Not detected as Teams context', 'error');
+            }
+            
+            // Test basic functionality
+            setTimeout(() => {
+                addStatus('✓ JavaScript execution working', 'success');
+            }, 100);
+            
+        } catch (error) {
+            addStatus(`✗ Error: ${error.message}`, 'error');
+        }
+    </script>
+</body>
+</html>

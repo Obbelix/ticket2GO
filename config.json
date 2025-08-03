@@ -1,0 +1,6 @@
+{
+  "endpoint": "https://your-actual-service-desk-api.com/api/tickets",
+  "username": "your-service-desk-username",
+  "password": "your-service-desk-password",
+  "identifier": "your-service-desk-identifier"
+}

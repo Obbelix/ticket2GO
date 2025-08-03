@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Service Desk Case</title>
+    <style>
+      body { 
+        font-family: Arial, sans-serif; 
+        padding: 20px; 
+        margin: 0;
+        background: white;
+      }
+      .debug { 
+        background: red; 
+        color: white; 
+        padding: 10px; 
+        margin-bottom: 10px; 
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="debug">
+        DEBUG: Static HTML page is loading successfully!
+      </div>
+      <h1>Create Service Desk Case</h1>
+      <p>This is a static HTML fallback to test Teams integration.</p>
+      <p>URL: <span id="url"></span></p>
+      <p>Params: <span id="params"></span></p>
+    </div>
+    
+    <script>
+      document.getElementById('url').textContent = window.location.href;
+      document.getElementById('params').textContent = window.location.search;
+      console.log('Static HTML page loaded successfully');
+      console.log('URL:', window.location.href);
+      console.log('Params:', window.location.search);
+    </script>
+  </body>
+</html>

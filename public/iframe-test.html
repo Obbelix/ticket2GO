@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #00ff00;
+            color: black;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>IFRAME TEST - GREEN PAGE</h1>
+    <p>If you see this green page in Teams, iframe loading works!</p>
+    <p>URL: <span id="url"></span></p>
+    <p>Time: <span id="time"></span></p>
+    
+    <script>
+        console.log('=== IFRAME TEST START ===');
+        document.getElementById('url').textContent = location.href;
+        document.getElementById('time').textContent = new Date().toISOString();
+        console.log('Iframe test loaded successfully');
+        console.log('=== IFRAME TEST COMPLETE ===');
+    </script>
+</body>
+</html>

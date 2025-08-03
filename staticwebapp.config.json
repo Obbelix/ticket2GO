@@ -1,0 +1,50 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/test.html",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/create-case",
+      "rewrite": "/index.html",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/create-case.html",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/diagnostic.html",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/teams-test.html",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/simple-test.html",
+      "allowedRoles": ["anonymous"]
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/api/*", "/*.{css,scss,js,png,gif,ico,jpg,jpeg,svg,woff,woff2,ttf,eot}"]
+  },
+  "responseOverrides": {
+    "404": {
+      "redirect": "/",
+      "statusCode": 200
+    }
+  },
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+    "content-security-policy": "frame-ancestors 'self' https://teams.microsoft.com https://*.teams.microsoft.com https://*.skype.com https://*.microsoft.com https://*.office.com https://*.microsoftonline.com",
+    "X-Frame-Options": ""
+  }
+}

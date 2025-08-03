@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Teams Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #ff0000;
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>TEAMS TEST PAGE</h1>
+    <p>If you can see this red page, the routing works!</p>
+    <p>URL: <script>document.write(location.href)</script></p>
+    <p>Time: <script>document.write(new Date())</script></p>
+    
+    <script>
+        console.log('Test page loaded at:', new Date());
+        console.log('URL:', location.href);
+        
+        // Test if we're in Teams
+        if (window.parent !== window) {
+            console.log('Running in iframe');
+        } else {
+            console.log('Not in iframe');
+        }
+    </script>
+</body>
+</html>
